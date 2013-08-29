@@ -34,9 +34,10 @@ describe :Wheel do
 
   describe :circumfrence do
     subject { wheel.circumfrence }
-    let(:diameter) { wheel.stub(:diameter).to_return(20) }
 
-    it { should == 157.07963267948966 }  
+    let!(:diameter) { wheel.stub(:diameter) { 10 } }
+
+    it { should == 31.41592653589793 }  
   end
 
 end
